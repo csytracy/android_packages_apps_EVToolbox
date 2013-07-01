@@ -147,6 +147,19 @@
 
         </activity>
 
+        <activity android:name="Settings$PowerWidget"
+                android:label="@string/pref_power_widget_title_head"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:clearTaskOnLaunch="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+            <meta-data android:name="com.evervolv.toolbox.FRAGMENT_CLASS"
+                android:value="com.evervolv.toolbox.activities.subactivities.PowerWidget" />
+            <meta-data android:name="com.evervolv.toolbox.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/power_widget_settings" />
+        </activity>
+
         <!-- Qwik Widgets -->'
 <!--
         <activity android:name="Settings$QwikWidgetsActivity"
