@@ -16,5 +16,5 @@
     <string name="config_recommendedTabletDpi" translatable="false">-1</string>
 
     <!-- LED Flashlight -->
-    <bool name="has_led_flash">false</bool>
+    <bool name="has_led_flash" translatable="false">true</bool>
 </resources>

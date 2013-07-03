@@ -49,9 +49,11 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-//import com.android.internal.telephony.Phone;
+//import android.telephony.Phone;
 import com.evervolv.toolbox.R;
 import com.evervolv.toolbox.SettingsFragment;
+
+import com.evervolv.toolbox.utils.QSUtils;
 
 public class PowerWidget extends SettingsFragment implements
         Preference.OnPreferenceChangeListener {
@@ -243,6 +245,14 @@ public class PowerWidget extends SettingsFragment implements
                 PowerWidgetUtil.BUTTONS.remove(PowerWidgetUtil.BUTTON_WIMAX);
             }
 
+            // Don't show mobile data options if not supported
+            if (!QSUtils.deviceSupportsMobileData(getActivity())) {
+                PowerWidgetUtil.BUTTONS.remove(PowerWidgetUtil.BUTTON_MOBILEDATA);
+                PowerWidgetUtil.BUTTONS.remove(PowerWidgetUtil.BUTTON_NETWORKMODE);
+                PowerWidgetUtil.BUTTONS.remove(PowerWidgetUtil.BUTTON_WIFIAP);
+                prefButtonsModes.removePreference(mNetworkMode);
+            }
+
             // fill that checkbox map!
             for (PowerWidgetUtil.ButtonInfo button : PowerWidgetUtil.BUTTONS.values()) {
                 // create a checkbox
@@ -286,6 +296,11 @@ public class PowerWidget extends SettingsFragment implements
 
                     switch (network_state) {
                     // list of supported network modes
+                    //    case Phone.NT_MODE_WCDMA_PREF:
+                    //    case Phone.NT_MODE_WCDMA_ONLY:
+                    //    case Phone.NT_MODE_GSM_UMTS:
+                    //    case Phone.NT_MODE_GSM_ONLY:
+                    //        break;
                         default:
                             cb.setEnabled(false);
                             break;

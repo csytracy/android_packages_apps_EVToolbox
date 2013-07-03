@@ -88,7 +88,7 @@
     <string name="default_qwik_widgets">toggleWifi|toggleBluetooth|toggleAutoRotate</string>
 
     <!-- Power Widget  -->
-    <string name="pref_power_widget_title_head">Power widget</string>
+    <string name="pref_power_widget_title_head">Powerwidget</string>
     <string name="title_expanded_widget">Power widget</string>
     <string name="power_widget_behavior">Widget behavior</string>
     <string name="title_expanded_hide_onchange">Close drawer on change</string>
