@@ -49,7 +49,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-//import android.telephony.Phone;
+import com.android.internal.telephony.Phone;
+
 import com.evervolv.toolbox.R;
 import com.evervolv.toolbox.SettingsFragment;
 
@@ -296,11 +297,11 @@ public class PowerWidget extends SettingsFragment implements
 
                     switch (network_state) {
                     // list of supported network modes
-                    //    case Phone.NT_MODE_WCDMA_PREF:
-                    //    case Phone.NT_MODE_WCDMA_ONLY:
-                    //    case Phone.NT_MODE_GSM_UMTS:
-                    //    case Phone.NT_MODE_GSM_ONLY:
-                    //        break;
+                        case Phone.NT_MODE_WCDMA_PREF:
+                        case Phone.NT_MODE_WCDMA_ONLY:
+                        case Phone.NT_MODE_GSM_UMTS:
+                        case Phone.NT_MODE_GSM_ONLY:
+                            break;
                         default:
                             cb.setEnabled(false);
                             break;
